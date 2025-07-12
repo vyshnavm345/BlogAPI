@@ -30,6 +30,7 @@ https://github.com/vyshnavm345/BlogAPI
 - **JWT authentication** (`/api/token/`, `/api/token/refresh/`)  
 - **Blog Post CRUD** with author-based permissions  
 - **Role-based access**: only authors or admins can edit/delete posts  
+- **Demonstrated behavior**: multiple users can create posts and list all, but only the post’s author or an admin can update or delete it  
 - **Interactive API docs** via Swagger and ReDoc  
 - **Admin interface** for manual data management
 
