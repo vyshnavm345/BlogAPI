@@ -136,3 +136,9 @@ REST_FRAMEWORK = {
 CORS_ALLOW_ALL_ORIGINS = True
 
 AUTH_USER_MODEL = "core.User"
+
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",") + [
+    "blogapi-production-82e1.up.railway.app"
+]
+
+CSRF_TRUSTED_ORIGINS = ["https://blogapi-production-82e1.up.railway.app"]
