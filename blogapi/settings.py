@@ -142,3 +142,9 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",") + [
 ]
 
 CSRF_TRUSTED_ORIGINS = ["https://blogapi-production-82e1.up.railway.app"]
+
+# Tell Django to trust the X-Forwarded-Proto header from Railway's load balancer
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+# Ensure Django uses the X-Forwarded-Host (so swagger sees your real domain)
+USE_X_FORWARDED_HOST = True

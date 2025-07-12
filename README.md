@@ -6,10 +6,10 @@
 
 A **Django REST Framework** API for managing blog posts with JWT authentication, role‑based permissions, and interactive documentation via **Swagger** and **ReDoc**.
 
-## 🚀 Live Demo & Documentation
+## 🚀 Live Demo & API Documentation
 
-- **Swagger UI**: https://blogapi-production-82e1.up.railway.app/swagger/  
-- **ReDoc**: https://blogapi-production-82e1.up.railway.app/redoc/  
+- **Swagger UI**: https://blogapi-production-82e1.up.railway.app/swagger/
+- **ReDoc**: https://blogapi-production-82e1.up.railway.app/redoc/
 
 ## 🔗 Repository
 
@@ -17,75 +17,75 @@ https://github.com/vyshnavm345/BlogAPI
 
 ## 📦 Tech Stack
 
-- **Django** 5.x  
-- **Django REST Framework** 3.x  
-- **Simple JWT** for token-based auth  
-- **drf-yasg** for auto-generated docs  
-- **PostgreSQL** (production) / **SQLite** (development)  
-- **WhiteNoise** for static file serving  
+- **Django** 5.x
+- **Django REST Framework** 3.x
+- **Simple JWT** for token-based auth
+- **drf-yasg** for auto-generated docs
+- **PostgreSQL** (production) / **SQLite** (development)
+- **WhiteNoise** for static file serving
 
 ## 🛠️ Features
 
-- **User registration** with password confirmation  
-- **JWT authentication** (`/api/token/`, `/api/token/refresh/`)  
-- **Blog Post CRUD** with author-based permissions  
-- **Role-based access**: only authors or admins can edit/delete posts  
-- **Demonstrated behavior**: multiple users can create posts and list all, but only the post’s author or an admin can update or delete it  
-- **Interactive API docs** via Swagger and ReDoc  
+- **User registration** with password confirmation
+- **JWT authentication** (`/api/token/`, `/api/token/refresh/`)
+- **Blog Post CRUD** with author-based permissions
+- **Role-based access**: only authors or admins can edit/delete posts
+- **Demonstrated behavior**: multiple users can create posts and list all, but only the post’s author or an admin can update or delete it
+- **Interactive API docs** via Swagger and ReDoc
 - **Admin interface** for manual data management
 
 ## 📝 Getting Started
 
 ### Prerequisites
 
-- Python 3.10+  
-- Git  
-- (Optional) PostgreSQL for local testing  
+- Python 3.10+
+- Git
+- (Optional) PostgreSQL for local testing
 
 ### Local Setup
 
-1. **Clone the repository**  
+1. **Clone the repository**
    ```bash
    git clone https://github.com/vyshnavm345/BlogAPI.git
    cd BlogAPI
    ```
 
-2. **Create a virtual environment & activate**  
+2. **Create a virtual environment & activate**
    ```bash
    python3 -m venv env
    source env/bin/activate       # Windows: env\Scripts\activate
    ```
 
-3. **Install dependencies**  
+3. **Install dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Copy & configure environment variables**  
+4. **Copy & configure environment variables**
    ```bash
    cp .env.example .env
    ```
    Edit `.env` to set `SECRET_KEY`, `DEBUG=True`, `ALLOWED_HOSTS=localhost,127.0.0.1` and optionally `DATABASE_URL`.
 
-5. **Apply migrations**  
+5. **Apply migrations**
    ```bash
    python manage.py migrate
    ```
 
-6. **Create a superuser**  
+6. **Create a superuser**
    ```bash
    python manage.py createsuperuser
    ```
 
-7. **Run the development server**  
+7. **Run the development server**
    ```bash
    python manage.py runserver
    ```
 
-8. **Access the app**  
-   - API root: http://127.0.0.1:8000/api/  
-   - Swagger UI: http://127.0.0.1:8000/swagger/  
-   - ReDoc: http://127.0.0.1:8000/redoc/  
+8. **Access the app**
+   - API root: http://127.0.0.1:8000/api/
+   - Swagger UI: http://127.0.0.1:8000/swagger/
+   - ReDoc: http://127.0.0.1:8000/redoc/
    - Admin: http://127.0.0.1:8000/admin/
 
 ## 🎯 API Endpoints
@@ -110,7 +110,7 @@ https://github.com/vyshnavm345/BlogAPI
 
 ## ⚙️ Deployment
 
-The app is deployed on Railway. To switch to PostgreSQL in production, set the `DATABASE_URL` environment variable in Railway and run migrations via the CLI:  
+The app is deployed on Railway. To switch to PostgreSQL in production, set the `DATABASE_URL` environment variable in Railway and run migrations via the CLI:
 ```bash
 railway run python3 manage.py migrate
 ```
