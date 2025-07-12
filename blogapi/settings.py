@@ -146,5 +146,22 @@ CSRF_TRUSTED_ORIGINS = ["https://blogapi-production-82e1.up.railway.app"]
 # Tell Django to trust the X-Forwarded-Proto header from Railway's load balancer
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
-# Ensure Django uses the X-Forwarded-Host (so swagger sees your real domain)
+# Ensure Django uses the X-Forwarded-Host (so swagger sees the real domain)
 USE_X_FORWARDED_HOST = True
+
+SWAGGER_SETTINGS = {
+    "USE_SESSION_AUTH": False,
+    # “Bearer” apiKey scheme for swagger
+    "SECURITY_DEFINITIONS": {
+        "Bearer": {
+            "type": "apiKey",
+            "in": "header",
+            "name": "Authorization",
+            "description": (
+                "JWT Authorization header using the Bearer scheme.\n\n"
+                "Enter your access token like:\n\n"
+                "    Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJ..."
+            ),
+        }
+    },
+}
